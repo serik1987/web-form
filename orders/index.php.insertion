@@ -1,0 +1,61 @@
+﻿<!--------------------------------------------->
+	<!-- Addition to the template: Order form    -->
+	<!--                                         -->
+	<!-- (C) Sergei Kozhukhov, 2016              -->
+	<!--------------------------------------------->
+	
+	<div class="order-form">
+		<form>
+			<header>
+				{{header}}
+			</header>
+			<div id="order-form-body">
+				<div>
+					<label for="client-name">Ваше имя*</label>
+					<input type="text" placeholder="Как к Вам обращаться" name="client-name" id="client-name" required/>
+				</div>
+				
+				<div>
+					<label for="client-phone">Телефон*</label>
+					<input type="text" placeholder="Ваш телефон" name="client-phone" id="client-phone" pattern="^\+?(?:(\d)[\s-]?)+$" required/>
+				</div>
+				
+				<div>
+				<label for="client-mail">E-mail</label>
+				<input type="text" placeholder="Ваш e-mail" name="client-mail" id="client-mail" pattern="^.+@.+\..+$"/>
+				<br/>
+			
+				<label for="good-name">Товар</label>
+				<input type="text" disabled name="good-name" id="good-name" value="{{goodName}}"/>
+				</div>
+				
+				<div>
+				<label for="good-size">Размеры</label>
+				<input type="text" placeholder="{{size}}" name="good-size" id="good-size"/>
+				<input type="hidden" name="good-size-default" id="good-size-default" value="{{size}}"/>
+				</div>
+			
+				<div>
+				<label for="good-color">Цвет</label>
+				<input type="text" name="good-color" id="good-color" value="{{color}}" disabled/>
+				</div>
+			
+				<div>
+				<label for="order-comments">Адрес доставки и комментарии к заказу</label>
+				<textarea rows="7" id="order-comments" name="order-comments"></textarea>
+				</div>
+				
+				<div id="order-footer">Мы свяжемся с Вами в течение 1 рабочего дня для уточнения деталей и условий покупки</div>
+				
+				<button name="order-submit" id="order-submit">Отправить заявку</button>
+			</div>
+		</form>
+	</div>
+	
+	
+	<div id="msg-box">
+	</div>
+	
+	<script src="/orders/order_button.js" type="text/javascript"></script>
+	
+	<!-- Конец текста, который надо вставить -->
